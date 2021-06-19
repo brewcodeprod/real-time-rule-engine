@@ -1,0 +1,8 @@
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="myBase" default="true" eventProcessingMode="cloud" equalsBehavior="identity" declarativeAgenda="enabled"
+           packages="com.test.importproducts">
+        <!--<ksession name="KSession2_1" type="stateful" default="true/">-->
+        <ksession name="mySession" type="stateless"/>
+    </kbase>
+</kmodule>
