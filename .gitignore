@@ -1,5 +1,5 @@
 # Default ignored files
 /.idea
 /target
-/docker
+/docker/docker-compose-kafka.yml
 /Temp
