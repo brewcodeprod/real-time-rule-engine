@@ -5,8 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.app.engine.model","com.app.engine.controller","com.app.engine.service"})
+@ComponentScan({"com.app.engine.kafka", "com.app.engine.controller"})
     public class DroolsApp {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DroolsApp.class, args);
+    }
+
         /**
          private static final String CONTAINER_ID = "my-deploy";
          private static final String USER = "kieserver";
@@ -32,11 +37,6 @@ import org.springframework.context.annotation.ComponentScan;
          }
 
          }**/
-
-
-        public static void main(String[] args) {
-            SpringApplication.run(DroolsApp.class, args);
-        }
 
     }
 

@@ -40,6 +40,11 @@
                 <scope>runtime</scope>
                 <version>${drools.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-ci</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
             <!--<dependency>
                 <groupId>org.kie</groupId>
                 <artifactId>kie-api</artifactId>
@@ -50,6 +55,22 @@
                 <artifactId>kie-server-client</artifactId>
                 <version>${drools.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.drools/drools-workbench-models-guided-dtable -->
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-workbench-models-guided-dtable</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.kafka</groupId>
+                <artifactId>kafka-clients</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+            <!--<dependency>
+                <groupId>com.test</groupId>
+                <artifactId>ImportProducts</artifactId>
+                <version>LATEST</version>
+            </dependency>-->
             <!--<dependency>
                 <groupId>org.kie.server</groupId>
                 <artifactId>kie-server-api</artifactId>
@@ -91,6 +112,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>1.1.1</version>
+            </dependency>
             <!--<dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-beans</artifactId>
@@ -118,17 +144,25 @@
             </dependency>-->
         </dependencies>
 
-    <repository>
-        <id>guvnor-m2-repo</id>
-        <name>Guvnor M2 Repo</name>
-        <url>http://localhost:8080/drools/maven2wb/</url>
-    </repository>
+    <repositories>
+        <repository>
+            <id>guvnor-m2-repo</id>
+            <name>Guvnor M2 Repo</name>
+            <url>http://localhost:8080/business-central/maven2</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-maven-plugin</artifactId>
+                <version>${drools.version}</version>
+                <extensions>true</extensions>
             </plugin>
         </plugins>
     </build>

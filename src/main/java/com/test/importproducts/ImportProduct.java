@@ -61,4 +61,15 @@ public class ImportProduct implements java.io.Serializable {
         return "Product [id=" + id + ", category=" + category + ", status=" + status + ", price=" + price + "]";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ImportProduct) {
+            return ((ImportProduct) obj).id.equals(id);
+        }
+        return false;
+    }
+    @Override
+    public int hashCode() {
+        return Integer.parseInt(this.id);
+    }
 }

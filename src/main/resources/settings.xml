@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profilesXml xmlns="http://maven.apache.org/PROFILES/1.0.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://maven.apache.org/PROFILES/1.0.0 http://maven.apache.org/xsd/profiles-1.0.0.xsd">
+			 
+<servers>
+	<server>
+      <id>drools-maven</id>
+      <username>admin</username>
+      <password>admin</password>
+    </server>
+</servers>
+  
+<profiles>
+    <profile>
+        <id>profile-1</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <repositories>
+            <repository>
+                <id>artifact-repo</id>
+                <url>http://localhost:8080/business-central/maven2</url>
+                <releases>
+                    <updatePolicy>always</updatePolicy>
+                </releases>
+            </repository>
+			<repository>
+                <id>maven-repo</id>
+                <url>https://repo.maven.apache.org/maven2/</url>
+                <releases>
+                    <updatePolicy>always</updatePolicy>
+                </releases>
+            </repository>
+        </repositories>
+    </profile>
+</profiles>
+</profilesXml>
